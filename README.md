@@ -8,7 +8,7 @@ Here are the steps to design the robot, house it inside Gazebo world, and progra
 1. `drive_bot`:  
 * Create a `my_robot` ROS package to hold your robot, the white ball, and the world.
 * Design a differential drive robot with the Unified Robot Description Format. Add two sensors to your robot: a lidar and a camera. Add Gazebo plugins for your robot’s differential drive, lidar, and camera. The robot you design should be significantly different from the one presented in the project lesson. Implement significant changes such as adjusting the color, wheel radius, and chassis dimensions. Or completely redesign the robot model! After all you want to impress your future employers :-D
-* House your robot inside the world you built in the **Build My World** project.
+* House your robot inside the world you built in Gazebo.
 * Add a white-colored ball to your Gazebo world and save a new copy of this world.
 * The `world.launch` file should launch your world with the white-colored ball and your robot.
 2. `ball_chaser`:
@@ -61,8 +61,7 @@ Directory Structure
 │   │   │   │   ├── my_robot.gazebo
 │   │   │   │   ├── my_robot.xacro
 │   │   │   ├── worlds                         # world folder for world files
-│   │   │   │   ├── empty.world
-│   │   │   │   ├── myoffice.world
+│   │   │   │   ├── yiqin.world
 │   │   │   ├── CMakeLists.txt                 # compiler instructions
 │   │   │   ├── package.xml                    # package info
 ├── my_ball                                    # Model files 
@@ -74,7 +73,6 @@ Directory Structure
 - [drive_bot.cpp](/catkin_ws/src/ball_chaser/src/drive_bot.cpp): ROS service C++ script, command the robot with specify speeds.  
 - [process_images.cpp](/catkin_ws/src/ball_chaser/src/process_images.cpp): ROS service C++ script, process the camera image and return requested speeds.  
 - [world.launch](/catkin_ws/src/my_robot/launch/world.launch): Launch my_robot mode in Gazebo world with building and plugins.  
-- [empty.world](/catkin_ws/src/my_robot/worlds/empty.world): Gazebo world file that includes nothing.  
 - [yiqin.world](/catkin_ws/src/my_robot/worlds/yiqin.world): Gazebo world file that includes the models.  
 - [CMakeLists.txt](/catkin_ws/src/my_robot/CMakeLists.txt): File to link the C++ code to libraries.  
 - [robot_description.launch](/catkin_ws/src/my_robot/launch/robot_description.launch): Create robot model in Gazebo world.  
