@@ -6,15 +6,15 @@ Designed and built a mobile robot in Gazebo, and programed with C++ nodes in ROS
 Here are the steps to design the robot, house it inside Gazebo world, and program it to chase white-colored balls:  
 
 1. `drive_bot`:  
-* Create a `my_robot` ROS package to hold your robot, the white ball, and the world.
-* Design a differential drive robot with the Unified Robot Description Format. Add two sensors to your robot: a lidar and a camera. Add Gazebo plugins for your robot’s differential drive, lidar, and camera. The robot you design should be significantly different from the one presented in the project lesson. Implement significant changes such as adjusting the color, wheel radius, and chassis dimensions. Or completely redesign the robot model! After all you want to impress your future employers :-D
-* House your robot inside the world you built in Gazebo.
-* Add a white-colored ball to your Gazebo world and save a new copy of this world.
-* The `world.launch` file should launch your world with the white-colored ball and your robot.
+* Create a `my_robot` ROS package to hold the robot, the white ball, and the world.
+* Design a differential drive robot with the Unified Robot Description Format. Add two sensors to the robot: a lidar and a camera. Add Gazebo plugins for the robot’s differential drive, lidar, and camera. 
+* House the robot inside the world built in Gazebo.
+* Add a white-colored ball to the Gazebo world and save a new copy of this world.
+* The `world.launch` file should launch the world with the white-colored ball and the robot.
 2. `ball_chaser`:
-* Create a `ball_chaser` ROS package to hold your C++ nodes.
+* Create a `ball_chaser` ROS package to hold the C++ nodes.
 * Write a `drive_bot` C++ node that will provide a `ball_chaser/command_robot` service to drive the robot by controlling its linear x and angular z velocities. The service should publish to the wheel joints and return back the requested velocities.
-* Write a `process_image` C++ node that reads your robot’s camera image, analyzes it to determine the presence and position of a white ball. If a white ball exists in the image, your node should request a service via a client to drive the robot towards it.
+* Write a `process_image` C++ node that reads the robot’s camera image, analyzes it to determine the presence and position of a white ball. If a white ball exists in the image, the node should request a service via a client to drive the robot towards it.
 * The `ball_chaser.launch` should run both the `drive_bot` and the `process_image` nodes.  
 ## Prerequisites/Dependencies  
 * Gazebo >= 7.0  
@@ -34,7 +34,7 @@ Here are the steps to design the robot, house it inside Gazebo world, and progra
 ```bash
 sudo apt-get update && sudo apt-get upgrade -y
 ```
-4. Build and run your code.  
+4. Build and run the code.  
 ## Project Description  
 Directory Structure  
 ```
@@ -105,11 +105,11 @@ rosrun rqt_image_view rqt_image_view
 ```  
 
 ## Tips  
-1. It's recommended to update and upgrade your environment before running the code.  
+1. It's recommended to update and upgrade the environment before running the code.  
 ```bash
 sudo apt-get update && sudo apt-get upgrade -y
 ```
 
 ## Code Style
 
-Please (do your best to) stick to [Google's C++ style guide](https://google.github.io/styleguide/cppguide.html).
+[Google's C++ style guide](https://google.github.io/styleguide/cppguide.html).
